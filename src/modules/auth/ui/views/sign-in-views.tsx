@@ -19,6 +19,7 @@ import { Alert, AlertTitle } from "@/components/ui/alert";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 
 const formSchema = z.object({
@@ -27,11 +28,9 @@ const formSchema = z.object({
 });
 
 
-
-
-
-
 const SignInView = () => {
+
+    const router  = useRouter();
     const [error, setError] = useState<string | null>(null);
     const [pending, setPending] = useState(false);
 
@@ -54,6 +53,7 @@ const SignInView = () => {
         }, {
             onSuccess: () => {
                 setPending(false);
+                router.push("/");
 
             },
             onError: (error) => {
