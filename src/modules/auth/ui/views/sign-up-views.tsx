@@ -15,6 +15,7 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Alert, AlertTitle } from "@/components/ui/alert";
 import Link from "next/link";
 import Image from "next/image";
@@ -212,7 +213,8 @@ const SignUpView = () => {
                                         disabled={pending}
                                         onClick={() => onSocial("google")}
                                     >
-                                        Google
+                                        <FaGoogle className="mr-2 h-4 w-4" />
+
                                     </Button>
                                     <Button
                                         variant="outline"
@@ -221,7 +223,8 @@ const SignUpView = () => {
                                         disabled={pending}
                                         onClick={() => onSocial("github")}
                                     >
-                                        Github
+                                        <FaGithub className="mr-2 h-4 w-4" />
+
                                     </Button>
                                 </div>
                                 <div className="text-muted-foreground text-center text-sm">

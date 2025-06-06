@@ -20,6 +20,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 
 const formSchema = z.object({
@@ -30,7 +31,7 @@ const formSchema = z.object({
 
 const SignInView = () => {
 
-    const router  = useRouter();
+    const router = useRouter();
     const [error, setError] = useState<string | null>(null);
     const [pending, setPending] = useState(false);
 
@@ -49,7 +50,7 @@ const SignInView = () => {
         await authClient.signIn.email({
             email: data.email,
             password: data.password,
-             callbackURL: "/"
+            callbackURL: "/"
         }, {
             onSuccess: () => {
                 setPending(false);
@@ -167,7 +168,8 @@ const SignInView = () => {
                                         disabled={pending}
                                         onClick={() => onSocial("google")}
                                     >
-                                        Google
+                                        <FaGoogle className="mr-2 h-4 w-4" />
+
                                     </Button>
                                     <Button
                                         variant="outline"
@@ -176,7 +178,8 @@ const SignInView = () => {
                                         disabled={pending}
                                         onClick={() => onSocial("github")}
                                     >
-                                        Github
+                                        <FaGithub className="mr-2 h-4 w-4" />
+
                                     </Button>
                                 </div>
                                 <div className="text-muted-foreground text-center text-sm">

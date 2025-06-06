@@ -1,5 +1,5 @@
 import { auth } from "@/lib/auth";
-import SignUpView from "@/modules/auth/ui/views/sign-in-views";
+import SignUpView from "@/modules/auth/ui/views/sign-up-views";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
